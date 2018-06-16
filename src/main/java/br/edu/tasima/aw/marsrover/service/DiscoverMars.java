@@ -5,22 +5,22 @@ import br.edu.tasima.aw.marsrover.domain.Rover;
 import br.edu.tasima.aw.marsrover.domain.enums.MovementInstructionEnum;
 import javafx.util.Pair;
 
-public class DiscoverMars {
+class DiscoverMars {
     private Mars mars;
 
     DiscoverMars(Integer marsSize) {
         this.mars = new Mars(marsSize);
     }
 
-    public Mars getMars() {
+    Mars getMars() {
         return mars;
     }
 
-    public void landRover(Rover rover, Integer positionX, Integer positionY) {
+    void landRover(Rover rover, Integer positionX, Integer positionY) {
         this.mars.roverLanding(rover, new Pair<>(positionX, positionY));
     }
 
-    public void moveRover(String instruction) {
+    void moveRover(String instruction) {
         if (instruction.equals(MovementInstructionEnum.L.name())) {
             moveRoverL();
         } else if (instruction.equals(MovementInstructionEnum.O.name())) {
@@ -32,7 +32,7 @@ public class DiscoverMars {
         }
     }
 
-    public void moveRoverN() {
+    void moveRoverN() {
         Pair<Integer, Integer> lastPosition = this.mars.getRover().getPosition();
         this.mars.getMarsTerrain()[lastPosition.getKey()][lastPosition.getValue()] = false;
 
@@ -43,7 +43,7 @@ public class DiscoverMars {
     }
 
 
-    public void moveRoverS() {
+    void moveRoverS() {
         Pair<Integer, Integer> lastPosition = this.mars.getRover().getPosition();
         this.mars.getMarsTerrain()[lastPosition.getKey()][lastPosition.getValue()] = false;
 
@@ -54,7 +54,7 @@ public class DiscoverMars {
     }
 
 
-    public void moveRoverO() {
+    void moveRoverO() {
         Pair<Integer, Integer> lastPosition = this.mars.getRover().getPosition();
         this.mars.getMarsTerrain()[lastPosition.getKey()][lastPosition.getValue()] = false;
 
@@ -65,7 +65,7 @@ public class DiscoverMars {
     }
 
 
-    public void moveRoverL() {
+    void moveRoverL() {
         Pair<Integer, Integer> lastPosition = this.mars.getRover().getPosition();
         this.mars.getMarsTerrain()[lastPosition.getKey()][lastPosition.getValue()] = false;
 
