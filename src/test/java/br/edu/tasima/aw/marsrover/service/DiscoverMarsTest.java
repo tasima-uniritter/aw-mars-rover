@@ -100,18 +100,18 @@ public class DiscoverMarsTest {
     @Test
     public void test_InstructionMoveRover() {
         Rover rover = new Rover("PathFinder");
-        Integer positionX = 5;
-        Integer positionY = 5;
-        DiscoverMars discoverMars = new DiscoverMars(10);
+        Integer positionX = 10;
+        Integer positionY = 10;
+        DiscoverMars discoverMars = new DiscoverMars(11);
 
         discoverMars.landRover(rover, positionX, positionY);
 
-        String instructions = "L,L,N,N,L,L";
+        String instructions = "O,O,O,O,O,O,O,O,O,N,N,N,N,N,N,N,N,N,L,L,L,L,L,L,L,L,L,S,O,S,O,S,O,S,O,S,O,S,O,S,O,S,O,S,O,N,L,N,L,N,L,N,L,N,L,N,L,N,L,N,L,N,L,O,O,O,O,O,O,O,O,O,L,S,L,S,L,S,L,S,L,S,L,S,L,S,L,S,L,S";
 
         for(String instruction : instructions.split(",")){
             discoverMars.moveRover(instruction);
         }
 
-        assertTrue(discoverMars.getMars().getMarsTerrain()[9][3]);
+        assertTrue(discoverMars.getMars().getMarsTerrain()[10][10]);
     }
 }
